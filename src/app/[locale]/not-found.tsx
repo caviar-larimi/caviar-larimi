@@ -1,0 +1,1 @@
+export default function NotFound(){return <div className='container-page py-12'>Not found</div>}
