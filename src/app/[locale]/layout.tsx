@@ -2,14 +2,18 @@ import {NextIntlClientProvider} from 'next-intl';
 import {notFound} from 'next/navigation';
 import {unstable_setRequestLocale} from 'next-intl/server';
 
-const locales = ['de','en','fr','it'];
+const locales = ['de', 'en', 'fr', 'it'];
+
+export function generateStaticParams() {
+  return locales.map(locale => ({ locale }));
+}
 
 export default async function LocaleLayout({
   children,
-  params: {locale}
+  params: { locale }
 }: {
   children: React.ReactNode;
-  params: {locale: string};
+  params: { locale: string };
 }) {
   if (!locales.includes(locale)) notFound();
 
