@@ -1,7 +1,8 @@
-import {unstable_setRequestLocale} from 'next-intl/server';
-
-export default function Page({params: {locale}}: {params: {locale: string}}) {
-  unstable_setRequestLocale(locale);
-
-  // ...dein Code
+export default function Page() {
+  return (
+    <main style={{ padding: 40, color: "#000" }}>
+      <h1 style={{ fontSize: 40 }}>✅ Seite rendert</h1>
+      <p>Wenn du das siehst, ist es nur CSS/Theme.</p>
+    </main>
+  );
 }
